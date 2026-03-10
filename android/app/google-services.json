@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1000376194754",
+    "project_id": "zalo-call",
+    "storage_bucket": "zalo-call.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1000376194754:android:0fc6ea1b01b1b05bc80d5b",
+        "android_client_info": {
+          "package_name": "com.zalocall.zalo_call_recorder"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB49BbpnYs8K8vwGQENK2U4MWi6rs1rDKA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

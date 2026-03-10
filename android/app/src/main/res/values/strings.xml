@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accessibility_service_description">Call Recorder needs accessibility access to detect incoming and outgoing calls from Zalo, WhatsApp, Telegram, Viber and other messaging apps to enable automatic recording.</string>
+</resources>
