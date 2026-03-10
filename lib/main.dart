@@ -1,5 +1,4 @@
-﻿import 'dart:async';
-import 'package:flutter/foundation.dart';
+﻿import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -13,7 +12,6 @@ import 'providers/recording_provider.dart';
 import 'screens/auth/login_screen.dart';
 import 'screens/main_screen.dart';
 import 'l10n/app_localizations.dart';
-import 'services/native_call_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -37,32 +35,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  StreamSubscription? _callEventSubscription;
-
-  @override
-  void initState() {
-    super.initState();
-    _listenCallEvents();
-  }
-
-  void _listenCallEvents() {
-    _callEventSubscription = NativeCallService.callEvents.listen(
-      (event) {
-        final eventType = event['eventType'] as String?;
-        debugPrint('CallEvent: $eventType');
-      },
-      onError: (e) {
-        debugPrint('CallEvent error: $e');
-      },
-    );
-  }
-
-  @override
-  void dispose() {
-    _callEventSubscription?.cancel();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return MultiProvider(

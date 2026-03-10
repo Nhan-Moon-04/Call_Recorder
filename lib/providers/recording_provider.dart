@@ -143,8 +143,7 @@ class RecordingProvider with ChangeNotifier {
     }
 
     // Merge: local files take priority, avoid duplicates by filePath
-    final existingPaths =
-        firestoreRecordings.map((r) => r.filePath).toSet();
+    final existingPaths = firestoreRecordings.map((r) => r.filePath).toSet();
     final merged = <RecordingModel>[...firestoreRecordings];
     for (final local in localRecordings) {
       if (!existingPaths.contains(local.filePath)) {
@@ -158,43 +157,88 @@ class RecordingProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  /// Scan /storage/emulated/0/Documents/CallRecorder/ for .m4a files
+  /// Scan local directories for audio files (our app + MIUI built-in recorder)
   Future<List<RecordingModel>> _scanLocalRecordings(String userId) async {
     final List<RecordingModel> results = [];
-    try {
-      final baseDir = Directory('/storage/emulated/0/Documents/CallRecorder');
-      if (!await baseDir.exists()) return results;
 
-      await for (final entity in baseDir.list(recursive: true)) {
-        if (entity is File && entity.path.endsWith('.m4a')) {
-          final stat = await entity.stat();
-          final fileName = p.basename(entity.path);
+    // Directories to scan: our app + MIUI built-in call recording locations
+    final scanDirs = [
+      '/storage/emulated/0/Documents/CallRecorder',
+      '/storage/emulated/0/MIUI/sound_recorder/call_rec',
+      '/storage/emulated/0/Music/Recordings/Call Recordings',
+      '/storage/emulated/0/Recordings',
+      '/storage/emulated/0/sound_recorder/call_rec',
+    ];
 
-          // Parse source from filename: "SIM_193025.m4a" -> "SIM"
-          final parts = fileName.split('_');
-          final source = parts.isNotEmpty ? parts.first : 'Unknown';
+    for (final dirPath in scanDirs) {
+      try {
+        final baseDir = Directory(dirPath);
+        if (!await baseDir.exists()) continue;
 
-          // Estimate duration from file size (~ 16KB/s for 128kbps AAC)
-          final estimatedDuration = Duration(
-            seconds: (stat.size / 16000).round().clamp(1, 999999),
-          );
+        await for (final entity in baseDir.list(recursive: true)) {
+          final path = entity.path.toLowerCase();
+          if (entity is File &&
+              (path.endsWith('.m4a') ||
+                  path.endsWith('.wav') ||
+                  path.endsWith('.mp3') ||
+                  path.endsWith('.amr') ||
+                  path.endsWith('.aac') ||
+                  path.endsWith('.3gp'))) {
+            final stat = await entity.stat();
+            final fileName = p.basename(entity.path);
 
-          results.add(RecordingModel(
-            id: fileName, // Use filename as ID for local files
-            userId: userId,
-            fileName: fileName,
-            filePath: entity.path,
-            type: RecordingType.audio,
-            source: source,
-            duration: estimatedDuration,
-            fileSize: stat.size,
-            createdAt: stat.modified,
-          ));
+            // Skip corrupt/empty files (must be at least 4KB)
+            if (stat.size < 4096) {
+              debugPrint(
+                'Skipping corrupt file (${stat.size} bytes): ${entity.path}',
+              );
+              continue;
+            }
+
+            // Parse source from filename: "SIM_193025.wav" -> "SIM"
+            final parts = fileName.split('_');
+            String source = parts.isNotEmpty ? parts.first : 'Unknown';
+            // Fix old files with broken interpolation: "{source}" -> "SIM"
+            if (source == '{source}' || source.isEmpty) source = 'SIM';
+
+            // Estimate duration based on file format
+            final Duration estimatedDuration;
+            if (path.endsWith('.wav')) {
+              // WAV: 44100Hz mono 16-bit = 88200 bytes/sec
+              estimatedDuration = Duration(
+                seconds: ((stat.size - 44) / 88200).round().clamp(1, 999999),
+              );
+            } else if (path.endsWith('.amr')) {
+              // AMR: ~1.6KB/s
+              estimatedDuration = Duration(
+                seconds: (stat.size / 1600).round().clamp(1, 999999),
+              );
+            } else {
+              // AAC/M4A/MP3/3GP: ~16KB/s for 128kbps
+              estimatedDuration = Duration(
+                seconds: (stat.size / 16000).round().clamp(1, 999999),
+              );
+            }
+
+            results.add(
+              RecordingModel(
+                id: fileName, // Use filename as ID for local files
+                userId: userId,
+                fileName: fileName,
+                filePath: entity.path,
+                type: RecordingType.audio,
+                source: source,
+                duration: estimatedDuration,
+                fileSize: stat.size,
+                createdAt: stat.modified,
+              ),
+            );
+          }
         }
+      } catch (e) {
+        debugPrint('Failed to scan $dirPath: $e');
       }
-    } catch (e) {
-      debugPrint('Failed to scan local recordings: $e');
-    }
+    } // end for scanDirs
     return results;
   }
 

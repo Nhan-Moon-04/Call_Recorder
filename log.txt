@@ -1,646 +1,237 @@
-PS D:\Zalo_Call> flutter run
+S D:\Zalo_Call> flutter run
 Launching lib\main.dart on 2201116SG in debug mode...
-Note: Some input files use or override a deprecated API.
-Note: Recompile with -Xlint:deprecation for details.
-warning: [options] source value 8 is obsolete and will be removed in a future release
-warning: [options] target value 8 is obsolete and will be removed in a future release
-warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
-3 warnings
-e: Daemon compilation failed: null
-java.lang.Exception
-        at org.jetbrains.kotlin.daemon.common.CompileService$CallResult$Error.get(CompileService.kt:69)
-        at org.jetbrains.kotlin.daemon.common.CompileService$CallResult$Error.get(CompileService.kt:65)
-        at org.jetbrains.kotlin.compilerRunner.GradleKotlinCompilerWork.compileWithDaemon(GradleKotlinCompilerWork.kt:240)
-        at org.jetbrains.kotlin.compilerRunner.GradleKotlinCompilerWork.compileWithDaemonOrFallbackImpl(GradleKotlinCompilerWork.kt:159)      
-        at org.jetbrains.kotlin.compilerRunner.GradleKotlinCompilerWork.run(GradleKotlinCompilerWork.kt:111)
-        at org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction.execute(GradleCompilerRunnerWithWorkers.kt:74)
-        at org.gradle.workers.internal.DefaultWorkerServer.execute(DefaultWorkerServer.java:63)
-        at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:66)
-        at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:62)
-        at org.gradle.internal.classloader.ClassLoaderUtils.executeInClassloader(ClassLoaderUtils.java:100)
-        at org.gradle.workers.internal.NoIsolationWorkerFactory$1.lambda$execute$0(NoIsolationWorkerFactory.java:62)
-        at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:44)
-        at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:41)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
-        at org.gradle.workers.internal.AbstractWorker.executeWrappedInBuildOperation(AbstractWorker.java:41)
-        at org.gradle.workers.internal.NoIsolationWorkerFactory$1.execute(NoIsolationWorkerFactory.java:59)
-        at org.gradle.workers.internal.DefaultWorkerExecutor.lambda$submitWork$0(DefaultWorkerExecutor.java:174)
-        at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
-        at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runExecution(DefaultConditionalExecutionQueue.java:194)
-        at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.access$700(DefaultConditionalExecutionQueue.java:127)
-        at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner$1.run(DefaultConditionalExecutionQueue.java:169)
-        at org.gradle.internal.Factories$1.create(Factories.java:31)
-        at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:263)
-        at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:127)
-        at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:132)
-        at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runBatch(DefaultConditionalExecutionQueue.java:164)
-        at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.run(DefaultConditionalExecutionQueue.java:133)
-        at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-        at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
-        at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
-        at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
-        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-        at java.base/java.lang.Thread.run(Unknown Source)
-Caused by: java.lang.AssertionError: java.lang.Exception: Could not close incremental caches in D:\Zalo_Call\build\audioplayers_android\kotlin\compileDebugKotlin\cacheable\caches-jvm\jvm\kotlin: class-fq-name-to-source.tab, source-to-typealias-fq-name.tab, source-to-classes.tab, internal-name-to-source.tab
-        at org.jetbrains.kotlin.com.google.common.io.Closer.close(Closer.java:218)
-        at org.jetbrains.kotlin.incremental.IncrementalCachesManager.close(IncrementalCachesManager.kt:55)
-        at kotlin.io.CloseableKt.closeFinally(Closeable.kt:46)
-        at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileNonIncrementally(IncrementalCompilerRunner.kt:293)
-        at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compile(IncrementalCompilerRunner.kt:128)
-        at org.jetbrains.kotlin.daemon.CompileServiceImplBase.execIncrementalCompiler(CompileServiceImpl.kt:684)
-        at org.jetbrains.kotlin.daemon.CompileServiceImplBase.access$execIncrementalCompiler(CompileServiceImpl.kt:94)
-        at org.jetbrains.kotlin.daemon.CompileServiceImpl.compile(CompileServiceImpl.kt:1810)
-        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
-        at java.base/java.lang.reflect.Method.invoke(Unknown Source)
-        at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
-        at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
-        at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
-        at java.base/java.security.AccessController.doPrivileged(Unknown Source)
-        at java.rmi/sun.rmi.transport.Transport.serviceCall(Unknown Source)
-        at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
-        at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
-        at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
-        at java.base/java.security.AccessController.doPrivileged(Unknown Source)
-        at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
-        ... 3 more
-Caused by: java.lang.Exception: Could not close incremental caches in D:\Zalo_Call\build\audioplayers_android\kotlin\compileDebugKotlin\cacheable\caches-jvm\jvm\kotlin: class-fq-name-to-source.tab, source-to-typealias-fq-name.tab, source-to-classes.tab, internal-name-to-source.tab   
-        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:95)
-        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.close(BasicMapsOwner.kt:53)
-        at org.jetbrains.kotlin.com.google.common.io.Closer.close(Closer.java:205)
-        ... 22 more
-        Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\audioplayers_android-5.2.1\android\src\main\kotlin\xyz\luan\audioplayers\AudioContextAndroid.kt and D:\Zalo_Call\android.
-                at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-                at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-                at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)
-                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.save(FileToPathConverter.kt:33)
-                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.save(FileToPathConverter.kt:30)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:447)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:426)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:106)
-                at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
-                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
-                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemoryStorage.kt:136)
-                at org.jetbrains.kotlin.incremental.storage.PersistentStorageWrapper.close(PersistentStorage.kt:124)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
-                ... 24 more
-        Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\audioplayers_android-5.2.1\android\src\main\kotlin\xyz\luan\audioplayers\AudioplayersPlugin.kt and D:\Zalo_Call\android.
-                at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-                at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-                at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)       
-                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:50)
-                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:30)
-                at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.hashKey(LinkedCustomHashMap.java:109)
-                at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.remove(LinkedCustomHashMap.java:153)
-                at org.jetbrains.kotlin.com.intellij.util.containers.SLRUMap.remove(SLRUMap.java:89)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.flushAppendCache(PersistentMapImpl.java:1007)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:455)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:426)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:106)
-                at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
-                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
-                at org.jetbrains.kotlin.incremental.storage.AppendableInMemoryStorage.applyChanges(InMemoryStorage.kt:179)
-                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemoryStorage.kt:136)
-                at org.jetbrains.kotlin.incremental.AbstractIncrementalCache$SourceToTypealiasFqNameTwoWayMap.close(AbstractIncrementalCache.kt:297)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
-                ... 24 more
-        Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\audioplayers_android-5.2.1\android\src\main\kotlin\xyz\luan\audioplayers\AudioContextAndroid.kt and D:\Zalo_Call\android.
-                at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-                at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-                at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)       
-                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:50)
-                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:30)
-                at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.hashKey(LinkedCustomHashMap.java:109)
-                at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.remove(LinkedCustomHashMap.java:153)
-                at org.jetbrains.kotlin.com.intellij.util.containers.SLRUMap.remove(SLRUMap.java:89)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.flushAppendCache(PersistentMapImpl.java:1007)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:455)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:426)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:106)
-                at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
-                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
-                at org.jetbrains.kotlin.incremental.storage.AppendableInMemoryStorage.applyChanges(InMemoryStorage.kt:179)
-                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemoryStorage.kt:136)
-                at org.jetbrains.kotlin.incremental.storage.AppendableSetBasicMap.close(BasicMap.kt:157)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
-                ... 24 more
-        Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\audioplayers_android-5.2.1\android\src\main\kotlin\xyz\luan\audioplayers\AudioContextAndroid.kt and D:\Zalo_Call\android.
-                at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-                at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-                at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)       
-                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.save(FileToPathConverter.kt:33)
-                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.save(FileToPathConverter.kt:30)
-                at org.jetbrains.kotlin.incremental.storage.AppendableCollectionExternalizer.save(LazyStorage.kt:151)
-                at org.jetbrains.kotlin.incremental.storage.AppendableCollectionExternalizer.save(LazyStorage.kt:142)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:447)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:426)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:106)
-                at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
-                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
-                at org.jetbrains.kotlin.incremental.storage.AppendableInMemoryStorage.applyChanges(InMemoryStorage.kt:179)
-                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemoryStorage.kt:136)
-                at org.jetbrains.kotlin.incremental.storage.PersistentStorageWrapper.close(PersistentStorage.kt:124)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
-                ... 24 more
-        Suppressed: java.lang.Exception: Could not close incremental caches in D:\Zalo_Call\build\audioplayers_android\kotlin\compileDebugKotlin\cacheable\caches-jvm\lookups: id-to-file.tab, file-to-id.tab
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:95)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.close(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.LookupStorage.close(LookupStorage.kt:155)
-                ... 23 more
-                Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\audioplayers_android-5.2.1\android\src\main\kotlin\xyz\luan\audioplayers\AudioContextAndroid.kt and D:\Zalo_Call\android.   
-                        at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-                        at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-                        at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)
-                        at org.jetbrains.kotlin.incremental.storage.LegacyFileExternalizer.save(IdToFileMap.kt:51)
-                        at org.jetbrains.kotlin.incremental.storage.LegacyFileExternalizer.save(IdToFileMap.kt:48)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:447)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:426)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:106)
-                        at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
-                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
-                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemoryStorage.kt:136)
-                        at org.jetbrains.kotlin.incremental.storage.PersistentStorageWrapper.close(PersistentStorage.kt:124)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
-                        ... 25 more
-                Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\audioplayers_android-5.2.1\android\src\main\kotlin\xyz\luan\audioplayers\AudioContextAndroid.kt and D:\Zalo_Call\android.   
-                        at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-                        at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-                        at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)
-                        at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:50)
-                        at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:30)
-                        at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.hashKey(LinkedCustomHashMap.java:109)        
-                        at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.remove(LinkedCustomHashMap.java:153)
-                        at org.jetbrains.kotlin.com.intellij.util.containers.SLRUMap.remove(SLRUMap.java:89)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.flushAppendCache(PersistentMapImpl.java:1007)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:455)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:426)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:106)
-                        at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
-                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
-                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemoryStorage.kt:136)
-                        at org.jetbrains.kotlin.incremental.storage.PersistentStorageWrapper.close(PersistentStorage.kt:124)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
-                        ... 25 more
-        Suppressed: java.lang.Exception: Could not close incremental caches in D:\Zalo_Call\build\audioplayers_android\kotlin\compileDebugKotlin\cacheable\caches-jvm\inputs: source-to-output.tab
-                ... 25 more
-                Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\audioplayers_android-5.2.1\android\src\main\kotlin\xyz\luan\audioplayers\AudioContextAndroid.kt and D:\Zalo_Call\android.   
-                        at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-                        at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-                        at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)
-                        at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:50)
-                        at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:30)
-                        at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.hashKey(LinkedCustomHashMap.java:109)        
-                        at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.remove(LinkedCustomHashMap.java:153)
-                        at org.jetbrains.kotlin.com.intellij.util.containers.SLRUMap.remove(SLRUMap.java:89)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.flushAppendCache(PersistentMapImpl.java:1007)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:455)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:426)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:106)
-                        at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
-                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
-                        at org.jetbrains.kotlin.incremental.storage.AppendableInMemoryStorage.applyChanges(InMemoryStorage.kt:179)
-                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemoryStorage.kt:136)
-                        at org.jetbrains.kotlin.incremental.storage.AppendableSetBasicMap.close(BasicMap.kt:157)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
-                        ... 24 more
-
-e: Daemon compilation failed: null
-java.lang.Exception
-        at org.jetbrains.kotlin.daemon.common.CompileService$CallResult$Error.get(CompileService.kt:69)
-        at org.jetbrains.kotlin.daemon.common.CompileService$CallResult$Error.get(CompileService.kt:65)
-        at org.jetbrains.kotlin.compilerRunner.GradleKotlinCompilerWork.compileWithDaemon(GradleKotlinCompilerWork.kt:240)
-        at org.jetbrains.kotlin.compilerRunner.GradleKotlinCompilerWork.compileWithDaemonOrFallbackImpl(GradleKotlinCompilerWork.kt:159)      
-        at org.jetbrains.kotlin.compilerRunner.GradleKotlinCompilerWork.run(GradleKotlinCompilerWork.kt:111)
-        at org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction.execute(GradleCompilerRunnerWithWorkers.kt:74)
-        at org.gradle.workers.internal.DefaultWorkerServer.execute(DefaultWorkerServer.java:63)
-        at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:66)
-        at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:62)
-        at org.gradle.internal.classloader.ClassLoaderUtils.executeInClassloader(ClassLoaderUtils.java:100)
-        at org.gradle.workers.internal.NoIsolationWorkerFactory$1.lambda$execute$0(NoIsolationWorkerFactory.java:62)
-        at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:44)
-        at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:41)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
-        at org.gradle.workers.internal.AbstractWorker.executeWrappedInBuildOperation(AbstractWorker.java:41)
-        at org.gradle.workers.internal.NoIsolationWorkerFactory$1.execute(NoIsolationWorkerFactory.java:59)
-        at org.gradle.workers.internal.DefaultWorkerExecutor.lambda$submitWork$0(DefaultWorkerExecutor.java:174)
-        at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
-        at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runExecution(DefaultConditionalExecutionQueue.java:194)  
-        at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.access$700(DefaultConditionalExecutionQueue.java:127)    
-        at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner$1.run(DefaultConditionalExecutionQueue.java:169)
-        at org.gradle.internal.Factories$1.create(Factories.java:31)
-        at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:263)
-        at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:127)
-        at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:132)
-        at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runBatch(DefaultConditionalExecutionQueue.java:164)
-        at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.run(DefaultConditionalExecutionQueue.java:133)
-        at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-        at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
-        at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
-        at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
-        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-        at java.base/java.lang.Thread.run(Unknown Source)
-Caused by: java.lang.AssertionError: java.lang.Exception: Could not close incremental caches in D:\Zalo_Call\build\shared_preferences_android\kotlin\compileDebugKotlin\cacheable\caches-jvm\jvm\kotlin: class-fq-name-to-source.tab, source-to-classes.tab, internal-name-to-source.tab    
-        at org.jetbrains.kotlin.com.google.common.io.Closer.close(Closer.java:218)
-        at org.jetbrains.kotlin.incremental.IncrementalCachesManager.close(IncrementalCachesManager.kt:55)
-        at kotlin.io.CloseableKt.closeFinally(Closeable.kt:46)
-        at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileNonIncrementally(IncrementalCompilerRunner.kt:293)
-        at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compile(IncrementalCompilerRunner.kt:128)
-        at org.jetbrains.kotlin.daemon.CompileServiceImplBase.execIncrementalCompiler(CompileServiceImpl.kt:684)
-        at org.jetbrains.kotlin.daemon.CompileServiceImplBase.access$execIncrementalCompiler(CompileServiceImpl.kt:94)
-        at org.jetbrains.kotlin.daemon.CompileServiceImpl.compile(CompileServiceImpl.kt:1810)
-        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
-        at java.base/java.lang.reflect.Method.invoke(Unknown Source)
-        at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
-        at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
-        at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
-        at java.base/java.security.AccessController.doPrivileged(Unknown Source)
-        at java.rmi/sun.rmi.transport.Transport.serviceCall(Unknown Source)
-        at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
-        at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
-        at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
-        at java.base/java.security.AccessController.doPrivileged(Unknown Source)
-        at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
-        ... 3 more
-Caused by: java.lang.Exception: Could not close incremental caches in D:\Zalo_Call\build\shared_preferences_android\kotlin\compileDebugKotlin\cacheable\caches-jvm\jvm\kotlin: class-fq-name-to-source.tab, source-to-classes.tab, internal-name-to-source.tab
-        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:95)
-        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.close(BasicMapsOwner.kt:53)
-        at org.jetbrains.kotlin.com.google.common.io.Closer.close(Closer.java:205)
-        ... 22 more
-        Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.4.21\android\src\main\kotlin\io\flutter\plugins\sharedpreferences\MessagesAsync.g.kt and D:\Zalo_Call\android.
-                at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-                at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-                at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)       
-                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.save(FileToPathConverter.kt:33)
-                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.save(FileToPathConverter.kt:30)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:447)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:426)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:106)
-                at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
-                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
-                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemoryStorage.kt:136)
-                at org.jetbrains.kotlin.incremental.storage.PersistentStorageWrapper.close(PersistentStorage.kt:124)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
-                ... 24 more
-        Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.4.21\android\src\main\kotlin\io\flutter\plugins\sharedpreferences\MessagesAsync.g.kt and D:\Zalo_Call\android.
-                at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-                at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-                at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)       
-                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:50)
-                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:30)
-                at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.hashKey(LinkedCustomHashMap.java:109)
-                at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.remove(LinkedCustomHashMap.java:153)
-                at org.jetbrains.kotlin.com.intellij.util.containers.SLRUMap.remove(SLRUMap.java:89)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.flushAppendCache(PersistentMapImpl.java:1007)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:455)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:426)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:106)
-                at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
-                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
-                at org.jetbrains.kotlin.incremental.storage.AppendableInMemoryStorage.applyChanges(InMemoryStorage.kt:179)
-                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemoryStorage.kt:136)
-                at org.jetbrains.kotlin.incremental.storage.AppendableSetBasicMap.close(BasicMap.kt:157)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
-                ... 24 more
-        Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.4.21\android\src\main\kotlin\io\flutter\plugins\sharedpreferences\MessagesAsync.g.kt and D:\Zalo_Call\android.
-                at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-                at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-                at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)       
-                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.save(FileToPathConverter.kt:33)
-                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.save(FileToPathConverter.kt:30)
-                at org.jetbrains.kotlin.incremental.storage.AppendableCollectionExternalizer.save(LazyStorage.kt:151)
-                at org.jetbrains.kotlin.incremental.storage.AppendableCollectionExternalizer.save(LazyStorage.kt:142)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:447)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:426)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:106)
-                at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
-                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
-                at org.jetbrains.kotlin.incremental.storage.AppendableInMemoryStorage.applyChanges(InMemoryStorage.kt:179)
-                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemoryStorage.kt:136)
-                at org.jetbrains.kotlin.incremental.storage.PersistentStorageWrapper.close(PersistentStorage.kt:124)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
-                ... 24 more
-        Suppressed: java.lang.Exception: Could not close incremental caches in D:\Zalo_Call\build\shared_preferences_android\kotlin\compileDebugKotlin\cacheable\caches-jvm\lookups: id-to-file.tab, file-to-id.tab
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:95)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.close(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.LookupStorage.close(LookupStorage.kt:155)
-                ... 23 more
-                Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.4.21\android\src\main\kotlin\io\flutter\plugins\sharedpreferences\MessagesAsync.g.kt and D:\Zalo_Call\android.
-                        at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-                        at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-                        at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)
-                        at org.jetbrains.kotlin.incremental.storage.LegacyFileExternalizer.save(IdToFileMap.kt:51)
-                        at org.jetbrains.kotlin.incremental.storage.LegacyFileExternalizer.save(IdToFileMap.kt:48)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:447)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:426)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:106)
-                        at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
-                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
-                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemoryStorage.kt:136)
-                        at org.jetbrains.kotlin.incremental.storage.PersistentStorageWrapper.close(PersistentStorage.kt:124)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
-                        ... 25 more
-                Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.4.21\android\src\main\kotlin\io\flutter\plugins\sharedpreferences\MessagesAsync.g.kt and D:\Zalo_Call\android.
-                        at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-                        at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-                        at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)
-                        at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:50)
-                        at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:30)
-                        at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.hashKey(LinkedCustomHashMap.java:109)        
-                        at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.remove(LinkedCustomHashMap.java:153)
-                        at org.jetbrains.kotlin.com.intellij.util.containers.SLRUMap.remove(SLRUMap.java:89)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.flushAppendCache(PersistentMapImpl.java:1007)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:455)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:426)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:106)
-                        at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
-                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
-                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemoryStorage.kt:136)
-                        at org.jetbrains.kotlin.incremental.storage.PersistentStorageWrapper.close(PersistentStorage.kt:124)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
-                        ... 25 more
-        Suppressed: java.lang.Exception: Could not close incremental caches in D:\Zalo_Call\build\shared_preferences_android\kotlin\compileDebugKotlin\cacheable\caches-jvm\inputs: source-to-output.tab
-                ... 25 more
-                Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.4.21\android\src\main\kotlin\io\flutter\plugins\sharedpreferences\MessagesAsync.g.kt and D:\Zalo_Call\android.
-                        at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-                        at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-                        at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)
-                        at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:50)
-                        at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:30)
-                        at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.hashKey(LinkedCustomHashMap.java:109)
-                        at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.remove(LinkedCustomHashMap.java:153)
-                        at org.jetbrains.kotlin.com.intellij.util.containers.SLRUMap.remove(SLRUMap.java:89)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.flushAppendCache(PersistentMapImpl.java:1007)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:455)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:426)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:106)
-                        at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
-                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
-                        at org.jetbrains.kotlin.incremental.storage.AppendableInMemoryStorage.applyChanges(InMemoryStorage.kt:179)
-                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemoryStorage.kt:136)
-                        at org.jetbrains.kotlin.incremental.storage.AppendableSetBasicMap.close(BasicMap.kt:157)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
-                        ... 24 more
-
-e: Daemon compilation failed: null
-java.lang.Exception
-        at org.jetbrains.kotlin.daemon.common.CompileService$CallResult$Error.get(CompileService.kt:69)
-        at org.jetbrains.kotlin.daemon.common.CompileService$CallResult$Error.get(CompileService.kt:65)
-        at org.jetbrains.kotlin.compilerRunner.GradleKotlinCompilerWork.compileWithDaemon(GradleKotlinCompilerWork.kt:240)
-        at org.jetbrains.kotlin.compilerRunner.GradleKotlinCompilerWork.compileWithDaemonOrFallbackImpl(GradleKotlinCompilerWork.kt:159)      
-        at org.jetbrains.kotlin.compilerRunner.GradleKotlinCompilerWork.run(GradleKotlinCompilerWork.kt:111)
-        at org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction.execute(GradleCompilerRunnerWithWorkers.kt:74)
-        at org.gradle.workers.internal.DefaultWorkerServer.execute(DefaultWorkerServer.java:63)
-        at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:66)
-        at org.gradle.workers.internal.NoIsolationWorkerFactory$1$1.create(NoIsolationWorkerFactory.java:62)
-        at org.gradle.internal.classloader.ClassLoaderUtils.executeInClassloader(ClassLoaderUtils.java:100)
-        at org.gradle.workers.internal.NoIsolationWorkerFactory$1.lambda$execute$0(NoIsolationWorkerFactory.java:62)
-        at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:44)
-        at org.gradle.workers.internal.AbstractWorker$1.call(AbstractWorker.java:41)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
-        at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
-        at org.gradle.workers.internal.AbstractWorker.executeWrappedInBuildOperation(AbstractWorker.java:41)
-        at org.gradle.workers.internal.NoIsolationWorkerFactory$1.execute(NoIsolationWorkerFactory.java:59)
-        at org.gradle.workers.internal.DefaultWorkerExecutor.lambda$submitWork$0(DefaultWorkerExecutor.java:174)
-        at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
-        at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runExecution(DefaultConditionalExecutionQueue.java:194)  
-        at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.access$700(DefaultConditionalExecutionQueue.java:127)    
-        at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner$1.run(DefaultConditionalExecutionQueue.java:169)
-        at org.gradle.internal.Factories$1.create(Factories.java:31)
-        at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:263)
-        at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:127)
-        at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:132)
-        at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runBatch(DefaultConditionalExecutionQueue.java:164)      
-        at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.run(DefaultConditionalExecutionQueue.java:133)
-        at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
-        at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
-        at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
-        at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
-        at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-        at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-        at java.base/java.lang.Thread.run(Unknown Source)
-Caused by: java.lang.AssertionError: java.lang.Exception: Could not close incremental caches in D:\Zalo_Call\build\record_android\kotlin\compileDebugKotlin\cacheable\caches-jvm\jvm\kotlin: class-fq-name-to-source.tab, source-to-classes.tab, internal-name-to-source.tab
-        at org.jetbrains.kotlin.com.google.common.io.Closer.close(Closer.java:218)
-        at org.jetbrains.kotlin.incremental.IncrementalCachesManager.close(IncrementalCachesManager.kt:55)
-        at kotlin.io.CloseableKt.closeFinally(Closeable.kt:46)
-        at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileNonIncrementally(IncrementalCompilerRunner.kt:293)
-        at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compile(IncrementalCompilerRunner.kt:128)
-        at org.jetbrains.kotlin.daemon.CompileServiceImplBase.execIncrementalCompiler(CompileServiceImpl.kt:684)
-        at org.jetbrains.kotlin.daemon.CompileServiceImplBase.access$execIncrementalCompiler(CompileServiceImpl.kt:94)
-        at org.jetbrains.kotlin.daemon.CompileServiceImpl.compile(CompileServiceImpl.kt:1810)
-        at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
-        at java.base/java.lang.reflect.Method.invoke(Unknown Source)
-        at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
-        at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
-        at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
-        at java.base/java.security.AccessController.doPrivileged(Unknown Source)
-        at java.rmi/sun.rmi.transport.Transport.serviceCall(Unknown Source)
-        at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
-        at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
-        at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
-        at java.base/java.security.AccessController.doPrivileged(Unknown Source)
-        at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
-        ... 3 more
-Caused by: java.lang.Exception: Could not close incremental caches in D:\Zalo_Call\build\record_android\kotlin\compileDebugKotlin\cacheable\caches-jvm\jvm\kotlin: class-fq-name-to-source.tab, source-to-classes.tab, internal-name-to-source.tab
-        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:95)
-        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.close(BasicMapsOwner.kt:53)
-        at org.jetbrains.kotlin.com.google.common.io.Closer.close(Closer.java:205)
-        ... 22 more
-        Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\record_android-1.5.1\android\src\main\kotlin\com\llfbandit\record\RecordPlugin.kt and D:\Zalo_Call\android.
-                at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-                at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-                at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)       
-                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.save(FileToPathConverter.kt:33)
-                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.save(FileToPathConverter.kt:30)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:447)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:426)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:106)
-                at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
-                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
-                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemoryStorage.kt:136)
-                at org.jetbrains.kotlin.incremental.storage.PersistentStorageWrapper.close(PersistentStorage.kt:124)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
-                ... 24 more
-        Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\record_android-1.5.1\android\src\main\kotlin\com\llfbandit\record\RecordPlugin.kt and D:\Zalo_Call\android.
-                at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-                at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-                at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)       
-                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:50)
-                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:30)
-                at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.hashKey(LinkedCustomHashMap.java:109)
-                at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.remove(LinkedCustomHashMap.java:153)
-                at org.jetbrains.kotlin.com.intellij.util.containers.SLRUMap.remove(SLRUMap.java:89)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.flushAppendCache(PersistentMapImpl.java:1007)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:455)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:426)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:106)
-                at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
-                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
-                at org.jetbrains.kotlin.incremental.storage.AppendableInMemoryStorage.applyChanges(InMemoryStorage.kt:179)
-                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemoryStorage.kt:136)
-                at org.jetbrains.kotlin.incremental.storage.AppendableSetBasicMap.close(BasicMap.kt:157)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
-                ... 24 more
-        Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\record_android-1.5.1\android\src\main\kotlin\com\llfbandit\record\RecordPlugin.kt and D:\Zalo_Call\android.
-                at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-                at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-                at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)       
-                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.save(FileToPathConverter.kt:33)
-                at org.jetbrains.kotlin.incremental.storage.FileDescriptor.save(FileToPathConverter.kt:30)
-                at org.jetbrains.kotlin.incremental.storage.AppendableCollectionExternalizer.save(LazyStorage.kt:151)
-                at org.jetbrains.kotlin.incremental.storage.AppendableCollectionExternalizer.save(LazyStorage.kt:142)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:447)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:426)
-                at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:106)
-                at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
-                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
-                at org.jetbrains.kotlin.incremental.storage.AppendableInMemoryStorage.applyChanges(InMemoryStorage.kt:179)
-                at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemoryStorage.kt:136)
-                at org.jetbrains.kotlin.incremental.storage.PersistentStorageWrapper.close(PersistentStorage.kt:124)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
-                ... 24 more
-        Suppressed: java.lang.Exception: Could not close incremental caches in D:\Zalo_Call\build\record_android\kotlin\compileDebugKotlin\cacheable\caches-jvm\lookups: id-to-file.tab, file-to-id.tab
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:95)
-                at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.close(BasicMapsOwner.kt:53)
-                at org.jetbrains.kotlin.incremental.LookupStorage.close(LookupStorage.kt:155)
-                ... 23 more
-                Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\record_android-1.5.1\android\src\main\kotlin\com\llfbandit\record\RecordPlugin.kt and D:\Zalo_Call\android.
-                        at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-                        at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-                        at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)
-                        at org.jetbrains.kotlin.incremental.storage.LegacyFileExternalizer.save(IdToFileMap.kt:51)
-                        at org.jetbrains.kotlin.incremental.storage.LegacyFileExternalizer.save(IdToFileMap.kt:48)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:447)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:426)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:106)
-                        at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
-                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
-                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemoryStorage.kt:136)
-                        at org.jetbrains.kotlin.incremental.storage.PersistentStorageWrapper.close(PersistentStorage.kt:124)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
-                        ... 25 more
-                Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\record_android-1.5.1\android\src\main\kotlin\com\llfbandit\record\RecordPlugin.kt and D:\Zalo_Call\android.
-                        at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-                        at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-                        at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)
-                        at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:50)
-                        at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:30)
-                        at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.hashKey(LinkedCustomHashMap.java:109)        
-                        at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.remove(LinkedCustomHashMap.java:153)
-                        at org.jetbrains.kotlin.com.intellij.util.containers.SLRUMap.remove(SLRUMap.java:89)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.flushAppendCache(PersistentMapImpl.java:1007)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:455)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:426)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:106)
-                        at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
-                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
-                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemoryStorage.kt:136)
-                        at org.jetbrains.kotlin.incremental.storage.PersistentStorageWrapper.close(PersistentStorage.kt:124)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
-                        ... 25 more
-        Suppressed: java.lang.Exception: Could not close incremental caches in D:\Zalo_Call\build\record_android\kotlin\compileDebugKotlin\cacheable\caches-jvm\inputs: source-to-output.tab
-                ... 25 more
-                Suppressed: java.lang.IllegalArgumentException: this and base files have different roots: C:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\record_android-1.5.1\android\src\main\kotlin\com\llfbandit\record\RecordPlugin.kt and D:\Zalo_Call\android.
-                        at kotlin.io.FilesKt__UtilsKt.toRelativeString(Utils.kt:117)
-                        at kotlin.io.FilesKt__UtilsKt.relativeTo(Utils.kt:128)
-                        at org.jetbrains.kotlin.incremental.storage.RelocatableFileToPathConverter.toPath(RelocatableFileToPathConverter.kt:24)
-                        at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:50)
-                        at org.jetbrains.kotlin.incremental.storage.FileDescriptor.getHashCode(FileToPathConverter.kt:30)
-                        at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.hashKey(LinkedCustomHashMap.java:109)
-                        at org.jetbrains.kotlin.com.intellij.util.containers.LinkedCustomHashMap.remove(LinkedCustomHashMap.java:153)
-                        at org.jetbrains.kotlin.com.intellij.util.containers.SLRUMap.remove(SLRUMap.java:89)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.flushAppendCache(PersistentMapImpl.java:1007)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.doPut(PersistentMapImpl.java:455)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentMapImpl.put(PersistentMapImpl.java:426)
-                        at org.jetbrains.kotlin.com.intellij.util.io.PersistentHashMap.put(PersistentHashMap.java:106)
-                        at org.jetbrains.kotlin.incremental.storage.LazyStorage.set(LazyStorage.kt:80)
-                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.applyChanges(InMemoryStorage.kt:108)
-                        at org.jetbrains.kotlin.incremental.storage.AppendableInMemoryStorage.applyChanges(InMemoryStorage.kt:179)
-                        at org.jetbrains.kotlin.incremental.storage.InMemoryStorage.close(InMemoryStorage.kt:136)
-                        at org.jetbrains.kotlin.incremental.storage.AppendableSetBasicMap.close(BasicMap.kt:157)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner$close$1.invoke(BasicMapsOwner.kt:53)
-                        at org.jetbrains.kotlin.incremental.storage.BasicMapsOwner.forEachMapSafe(BasicMapsOwner.kt:87)
-                        ... 24 more
-
-exception: c:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\audioplayers_android-5.2.1\android\src\main\kotlin\xyz\luan\audioplayers\AudioplayersPlugin.kt:72:30: warning: 'var isSpeakerphoneOn: Boolean' is deprecated. Deprecated in Java.
-exception:                 audioManager.isSpeakerphoneOn = defaultAudioContext.isSpeakerphoneOn
-exception:                              ^^^^^^^^^^^^^^^^
-exception: c:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\audioplayers_android-5.2.1\android\src\main\kotlin\xyz\luan\audioplayers\player\WrappedPlayer.kt:172:22: warning: 'var isSpeakerphoneOn: Boolean' is deprecated. Deprecated in Java.
-exception:         audioManager.isSpeakerphoneOn = context.isSpeakerphoneOn
-exception:                      ^^^^^^^^^^^^^^^^
-exception: c:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\record_android-1.5.1\android\src\main\kotlin\com\llfbandit\record\record\format\Format.kt:121:21: warning: only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type 'MediaCodecInfo.AudioCapabilities?'.
-exception:         checkBounds(caps.audioCapabilities.bitrateRange, config.bitRate)
-exception:                     ^^^^^^^^^^^^^^^^^^^^^^
-exception: c:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\record_android-1.5.1\android\src\main\kotlin\com\llfbandit\record\record\format\Format.kt:123:11: warning: only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type 'MediaCodecInfo.AudioCapabilities?'.
-exception:       if (caps.audioCapabilities.supportedSampleRates != null) {
-exception:           ^^^^^^^^^^^^^^^^^^^^^^
-exception: c:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\record_android-1.5.1\android\src\main\kotlin\com\llfbandit\record\record\format\Format.kt:127:13: warning: only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type 'MediaCodecInfo.AudioCapabilities?'.
-exception:             caps.audioCapabilities.supportedSampleRates,
-exception:             ^^^^^^^^^^^^^^^^^^^^^^
-exception: c:\Users\Admin\AppData\Local\Pub\Cache\hosted\pub.dev\record_android-1.5.1\android\src\main\kotlin\com\llfbandit\record\record\format\Format.kt:135:25: warning: only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type 'MediaCodecInfo.AudioCapabilities?'.
-exception:           intArrayOf(1, caps.audioCapabilities.maxInputChannelCount),
-exception:                         ^^^^^^^^^^^^^^^^^^^^^^
-Running Gradle task 'assembleDebug'...                            122.7s
+Running Gradle task 'assembleDebug'...                             18.0s
 √ Built build\app\outputs\flutter-apk\app-debug.apk
-Installing build\app\outputs\flutter-apk\app-debug.apk...          17.7s
-Error: ADB exited with exit code 1
-Performing Streamed Install
+Installing build\app\outputs\flutter-apk\app-debug.apk...          11.9s
+D/FlutterJNI(12801): Beginning load of flutter...
+D/FlutterJNI(12801): flutter (null) was loaded normally!
+I/flutter (12801): [IMPORTANT:flutter/shell/platform/android/android_context_vk_impeller.cc(62)] Using the Impeller rendering backend (Vulkan).
+Syncing files to device 2201116SG...                               111ms
 
-adb.exe: failed to install D:\Zalo_Call\build\app\outputs\flutter-apk\app-debug.apk: Failure [INSTALL_FAILED_USER_RESTRICTED: Install canceled
-by user]
-Error launching application on 2201116SG.
-PS D:\Zalo_Call> 
+Flutter run key commands.
+r Hot reload.
+R Hot restart.
+h List all available interactive commands.
+d Detach (terminate "flutter run" but leave application running).
+c Clear the screen
+q Quit (terminate the application on the device).
+
+A Dart VM Service on 2201116SG is available at: http://127.0.0.1:60345/8TpEC-dZA3E=/
+The Flutter DevTools debugger and profiler on 2201116SG is available at:
+http://127.0.0.1:60345/8TpEC-dZA3E=/devtools/?uri=ws://127.0.0.1:60345/8TpEC-dZA3E=/ws
+D/FirebaseAuth(12801): Notifying id token listeners about user ( EImgMFcwtXaepxgPY5kYZdipP2y1 ).
+I/Choreographer(12801): Skipped 212 frames!  The application may be doing too much work on its main thread.
+D/VRI[MainActivity](12801): vri.Setup new sync id=0 syncSeqId=0
+D/o_call_recorder(12801): MiuiProcessManagerServiceStub setSchedFifo
+I/MiuiProcessManagerImpl(12801): setSchedFifo pid:12801, mode:3
+E/libEGL  (12801): pre_cache appList: com.sina.weibo,com.ss.android.article.news,com.taobao.taobao,com.smile.gifmaker,com.ss.android.ugc.aweme,com.tencent.mm,tv.danmaku.bili,,
+E/perf_hint(12801): Session creation failed, mPreferredRateNanos: -1
+W/Looper  (12801): PerfMonitor doFrame : time=35ms vsyncFrame=0 latency=1778ms procState=-1 historyMsgCount=2
+D/VRI[MainActivity](12801): vri.reportDrawFinished syncSeqId=0 android.view.ViewRootImpl.lambda$createSyncIfNeeded$4$android-view-ViewRootImpl:4081 android.view.ViewRootImpl$$ExternalSyntheticLambda2.run:6 android.os.Handler.handleCallback:942 android.os.Handler.dispatchMessage:99 android.os.Looper.loopOnce:211
+I/OpenGLRenderer(12801): Davey! duration=1810ms; Flags=1, FrameTimelineVsyncId=182283325, IntendedVsync=369850046105386, Vsync=369851817270198, InputEventId=0, HandleInputStart=369851824659899, AnimationStart=369851824661358, PerformTraversalsStart=369851824662035, DrawStart=369851825333285, FrameDeadline=369850058438719, FrameInterval=369851824495316, FrameStartTime=8354551, SyncQueued=369851833073077, SyncStart=369851833484431, IssueDrawCommandsStart=369851837682087, SwapBuffers=369851854933962, FrameCompleted=369851856935212, DequeueBufferDuration=5329063, QueueBufferDuration=1425104, GpuCompleted=369851856917139, SwapBuffersCompleted=369851856935212, DisplayPresentTime=3345172237915156329, CommandSubmissionCompleted=369851854933962,
+I/flutter (12801): Skipping corrupt file (3232 bytes): /storage/emulated/0/Documents/CallRecorder/2026-03/2026-03-10/SIM_195612.m4a
+I/flutter (12801): Skipping corrupt file (3232 bytes): /storage/emulated/0/Documents/CallRecorder/2026-03/2026-03-10/SIM_195703.m4a
+D/DecorView[](12801): onWindowFocusChanged hasWindowFocus true
+I/HandWritingStubImpl(12801): refreshLastKeyboardType: 1
+I/HandWritingStubImpl(12801): getCurrentKeyboardType: 1
+D/DecorView[](12801): getWindowModeFromSystem  windowmode is 1
+D/DecorView[](12801): updateDecorCaptionStatus windowMode is 1
+I/HandWritingStubImpl(12801): getCurrentKeyboardType: 1
+W/DynamiteModule(12801): Local module descriptor class for com.google.android.gms.providerinstaller.dynamite not found.
+I/DynamiteModule(12801): Considering local module com.google.android.gms.providerinstaller.dynamite:0 and remote module com.google.android.gms.providerinstaller.dynamite:0
+W/ProviderInstaller(12801): Failed to load providerinstaller module: No acceptable module com.google.android.gms.providerinstaller.dynamite found. Local version is 0 and remote version is 0.
+D/nativeloader(12801): Configuring clns-5 for other apk /system/framework/org.apache.http.legacy.jar. target_sdk_version=36, uses_libraries=ALL, library_path=/data/app/~~AbQsi6HBw5Q6k75jAaLvew==/com.google.android.gms-vQCuCySlL63qLJFS2ZL9rg==/lib/arm64:/data/app/~~AbQsi6HBw5Q6k75jAaLvew==/com.google.android.gms-vQCuCySlL63qLJFS2ZL9rg==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+D/nativeloader(12801): Extending system_exposed_libraries: libmisys_jni.xiaomi.so:libbinauralrenderer_wrapper.qti.so:libhoaeffects.qti.so:libQOC.qti.so:libxiaomi_modemdumpsdx55_jni.modem.so:libxiaomi_modemdump_jni.modem.so:libupdateprof.qti.so:libthermalclient.qti.so:libQOC.qti.so:libdiag_system.qti.so:libqape.qti.so:liblistenjni.qti.so
+W/o_call_recorder(12801): Loading /data/misc/apexdata/com.android.art/dalvik-cache/arm64/system@framework@com.android.location.provider.jar@classes.odex non-executable as it requires an image which we failed to load
+D/nativeloader(12801): Configuring clns-6 for other apk /system/framework/com.android.location.provider.jar. target_sdk_version=36, uses_libraries=ALL, library_path=/data/app/~~AbQsi6HBw5Q6k75jAaLvew==/com.google.android.gms-vQCuCySlL63qLJFS2ZL9rg==/lib/arm64:/data/app/~~AbQsi6HBw5Q6k75jAaLvew==/com.google.android.gms-vQCuCySlL63qLJFS2ZL9rg==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+D/nativeloader(12801): Extending system_exposed_libraries: libmisys_jni.xiaomi.so:libbinauralrenderer_wrapper.qti.so:libhoaeffects.qti.so:libQOC.qti.so:libxiaomi_modemdumpsdx55_jni.modem.so:libxiaomi_modemdump_jni.modem.so:libupdateprof.qti.so:libthermalclient.qti.so:libQOC.qti.so:libdiag_system.qti.so:libqape.qti.so:liblistenjni.qti.so
+D/nativeloader(12801): Configuring clns-7 for other apk /system/framework/com.android.media.remotedisplay.jar. target_sdk_version=36, uses_libraries=ALL, library_path=/data/app/~~AbQsi6HBw5Q6k75jAaLvew==/com.google.android.gms-vQCuCySlL63qLJFS2ZL9rg==/lib/arm64:/data/app/~~AbQsi6HBw5Q6k75jAaLvew==/com.google.android.gms-vQCuCySlL63qLJFS2ZL9rg==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+D/nativeloader(12801): Extending system_exposed_libraries: libmisys_jni.xiaomi.so:libbinauralrenderer_wrapper.qti.so:libhoaeffects.qti.so:libQOC.qti.so:libxiaomi_modemdumpsdx55_jni.modem.so:libxiaomi_modemdump_jni.modem.so:libupdateprof.qti.so:libthermalclient.qti.so:libQOC.qti.so:libdiag_system.qti.so:libqape.qti.so:liblistenjni.qti.so
+D/nativeloader(12801): Configuring clns-8 for other apk /data/app/~~AbQsi6HBw5Q6k75jAaLvew==/com.google.android.gms-vQCuCySlL63qLJFS2ZL9rg==/base.apk. target_sdk_version=36, uses_libraries=, library_path=/data/app/~~AbQsi6HBw5Q6k75jAaLvew==/com.google.android.gms-vQCuCySlL63qLJFS2ZL9rg==/lib/arm64:/data/app/~~AbQsi6HBw5Q6k75jAaLvew==/com.google.android.gms-vQCuCySlL63qLJFS2ZL9rg==/base.apk!/lib/arm64-v8a, permitted_path=/data:/mnt/expand:/data/user/0/com.google.android.gms
+W/ProviderInstaller(12801): Failed to report request stats: com.google.android.gms.common.security.ProviderInstallerImpl.reportRequestStats [class android.content.Context, long, long]
+D/nativeloader(12801): Load /data/app/~~AbQsi6HBw5Q6k75jAaLvew==/com.google.android.gms-vQCuCySlL63qLJFS2ZL9rg==/base.apk!/lib/arm64-v8a/libconscrypt_gmscore_jni.so using class loader ns clns-8 (caller=/data/app/~~AbQsi6HBw5Q6k75jAaLvew==/com.google.android.gms-vQCuCySlL63qLJFS2ZL9rg==/base.apk): ok
+V/NativeCrypto(12801): Registering com/google/android/gms/org/conscrypt/NativeCrypto's 334 native methods...
+I/o_call_recorder(12801): hiddenapi: Accessing hidden method Ljava/security/spec/ECParameterSpec;->getCurveName()Ljava/lang/String; (runtime_flags=0, domain=core-platform, api=unsupported) from Lcom/google/android/gms/org/conscrypt/Platform; (domain=app, TargetSdkVersion=36) using reflection: allowed
+E/GoogleApiManager(12801): Failed to get service from broker. 
+E/GoogleApiManager(12801): java.lang.SecurityException: Unknown calling package name 'com.google.android.gms'.
+E/GoogleApiManager(12801):      at android.os.Parcel.createExceptionOrNull(Parcel.java:3011)
+E/GoogleApiManager(12801):      at android.os.Parcel.createException(Parcel.java:2995)
+E/GoogleApiManager(12801):      at android.os.Parcel.readException(Parcel.java:2978)
+E/GoogleApiManager(12801):      at android.os.Parcel.readException(Parcel.java:2920)
+E/GoogleApiManager(12801):      at bgoy.a(:com.google.android.gms@260931029@26.09.31 (190400-877989800):36)
+E/GoogleApiManager(12801):      at bgmz.z(:com.google.android.gms@260931029@26.09.31 (190400-877989800):143)
+E/GoogleApiManager(12801):      at bftc.run(:com.google.android.gms@260931029@26.09.31 (190400-877989800):42)
+E/GoogleApiManager(12801):      at android.os.Handler.handleCallback(Handler.java:942)
+E/GoogleApiManager(12801):      at android.os.Handler.dispatchMessage(Handler.java:99)
+E/GoogleApiManager(12801):      at cujd.mz(:com.google.android.gms@260931029@26.09.31 (190400-877989800):1)
+E/GoogleApiManager(12801):      at cujd.dispatchMessage(:com.google.android.gms@260931029@26.09.31 (190400-877989800):5)
+E/GoogleApiManager(12801):      at android.os.Looper.loopOnce(Looper.java:211)
+E/GoogleApiManager(12801):      at android.os.Looper.loop(Looper.java:300)
+E/GoogleApiManager(12801):      at android.os.HandlerThread.run(HandlerThread.java:67)
+W/GoogleApiManager(12801): Not showing notification since connectionResult is not user-facing: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null, clientMethodKey=null}
+W/FlagRegistrar(12801): Failed to register com.google.android.gms.providerinstaller#com.zalocall.zalo_call_recorder
+W/FlagRegistrar(12801): gcsk: 17: 17: API: Phenotype.API is not available on this device. Connection failed with: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null, clientMethodKey=null}
+W/FlagRegistrar(12801):         at gcsm.a(:com.google.android.gms@260931029@26.09.31 (190400-877989800):13)
+W/FlagRegistrar(12801):         at hbrq.d(:com.google.android.gms@260931029@26.09.31 (190400-877989800):3)
+W/FlagRegistrar(12801):         at hbrs.run(:com.google.android.gms@260931029@26.09.31 (190400-877989800):130)
+W/FlagRegistrar(12801):         at hbtz.execute(:com.google.android.gms@260931029@26.09.31 (190400-877989800):1)
+W/FlagRegistrar(12801):         at hbsa.f(:com.google.android.gms@260931029@26.09.31 (190400-877989800):1)
+W/FlagRegistrar(12801):         at hbsa.m(:com.google.android.gms@260931029@26.09.31 (190400-877989800):99)
+W/FlagRegistrar(12801):         at hbsa.r(:com.google.android.gms@260931029@26.09.31 (190400-877989800):17)
+W/FlagRegistrar(12801):         at fvfu.hF(:com.google.android.gms@260931029@26.09.31 (190400-877989800):35)
+W/FlagRegistrar(12801):         at fhun.run(:com.google.android.gms@260931029@26.09.31 (190400-877989800):12)
+W/FlagRegistrar(12801):         at hbtz.execute(:com.google.android.gms@260931029@26.09.31 (190400-877989800):1)
+W/FlagRegistrar(12801):         at fhuo.b(:com.google.android.gms@260931029@26.09.31 (190400-877989800):18)
+W/FlagRegistrar(12801):         at fhvd.b(:com.google.android.gms@260931029@26.09.31 (190400-877989800):34)
+W/FlagRegistrar(12801):         at fhvf.d(:com.google.android.gms@260931029@26.09.31 (190400-877989800):25)
+W/FlagRegistrar(12801):         at bfql.c(:com.google.android.gms@260931029@26.09.31 (190400-877989800):9)
+W/FlagRegistrar(12801):         at bfta.q(:com.google.android.gms@260931029@26.09.31 (190400-877989800):48)
+W/FlagRegistrar(12801):         at bfta.d(:com.google.android.gms@260931029@26.09.31 (190400-877989800):10)
+W/FlagRegistrar(12801):         at bfta.g(:com.google.android.gms@260931029@26.09.31 (190400-877989800):191)
+W/FlagRegistrar(12801):         at bfta.onConnectionFailed(:com.google.android.gms@260931029@26.09.31 (190400-877989800):2)
+W/FlagRegistrar(12801):         at bftc.run(:com.google.android.gms@260931029@26.09.31 (190400-877989800):70)
+W/FlagRegistrar(12801):         at android.os.Handler.handleCallback(Handler.java:942)
+W/FlagRegistrar(12801):         at android.os.Handler.dispatchMessage(Handler.java:99)
+W/FlagRegistrar(12801):         at cujd.mz(:com.google.android.gms@260931029@26.09.31 (190400-877989800):1)
+W/FlagRegistrar(12801):         at cujd.dispatchMessage(:com.google.android.gms@260931029@26.09.31 (190400-877989800):5)
+W/FlagRegistrar(12801):         at android.os.Looper.loopOnce(Looper.java:211)
+W/FlagRegistrar(12801):         at android.os.Looper.loop(Looper.java:300)
+W/FlagRegistrar(12801):         at android.os.HandlerThread.run(HandlerThread.java:67)
+W/FlagRegistrar(12801): Caused by: bfos: 17: API: Phenotype.API is not available on this device. Connection failed with: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null, clientMethodKey=null}
+W/FlagRegistrar(12801):         at bgml.a(:com.google.android.gms@260931029@26.09.31 (190400-877989800):15)
+W/FlagRegistrar(12801):         at bfqo.a(:com.google.android.gms@260931029@26.09.31 (190400-877989800):1)
+W/FlagRegistrar(12801):         at bfql.c(:com.google.android.gms@260931029@26.09.31 (190400-877989800):5)
+W/FlagRegistrar(12801):         ... 12 more
+I/o_call_recorder(12801): hiddenapi: Accessing hidden method Ldalvik/system/VMStack;->getStackClass2()Ljava/lang/Class; (runtime_flags=0, domain=core-platform, api=unsupported) from Lgwgo; (domain=app, TargetSdkVersion=36) using reflection: allowed
+I/ProviderInstaller(12801): Installed default security provider GmsCore_OpenSSL
+D/ProfileInstaller(12801): Installing profile for com.zalocall.zalo_call_recorder
+I/o_call_recorder(12801): hiddenapi: Accessing hidden field Ljava/net/Socket;->impl:Ljava/net/SocketImpl; (runtime_flags=0, domain=core-platform, api=unsupported) from Lcom/google/android/gms/org/conscrypt/Platform; (domain=app, TargetSdkVersion=36) using reflection: allowed
+I/o_call_recorder(12801): hiddenapi: Accessing hidden method Ljava/security/spec/ECParameterSpec;->setCurveName(Ljava/lang/String;)V (runtime_flags=0, domain=core-platform, api=unsupported) from Lcom/google/android/gms/org/conscrypt/Platform; (domain=app, TargetSdkVersion=36) using reflection: allowed
+W/Firestore(12801): (25.1.4) [Firestore]: Listen for Query(target=Query(recordings where userId==EImgMFcwtXaepxgPY5kYZdipP2y1 order by -createdAt, -__name__);limitType=LIMIT_TO_FIRST) failed: Status{code=FAILED_PRECONDITION, description=The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/zalo-call/firestore/indexes?create_composite=Ckxwcm9qZWN0cy96YWxvLWNhbGwvZGF0YWJhc2VzLyhkZWZhdWx0KS9jb2xsZWN0aW9uR3JvdXBzL3JlY29yZGluZ3MvaW5kZXhlcy9fEAEaCgoGdXNlcklkEAEaDQoJY3JlYXRlZEF0EAIaDAoIX19uYW1lX18QAg, cause=null}
+I/flutter (12801): Failed to load from Firestore: [cloud_firestore/failed-precondition] The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/zalo-call/firestore/indexes?create_composite=Ckxwcm9qZWN0cy96YWxvLWNhbGwvZGF0YWJhc2VzLyhkZWZhdWx0KS9jb2xsZWN0aW9uR3JvdXBzL3JlY29yZGluZ3MvaW5kZXhlcy9fEAEaCgoGdXNlcklkEAEaDQoJY3JlYXRlZEF0EAIaDAoIX19uYW1lX18QAg
+W/MirrorManager(12801): this model don't Support
+I/o_call_recorder(12801): Background concurrent copying GC freed 7010KB AllocSpace bytes, 19(1056KB) LOS objects, 49% free, 5126KB/10MB, paused 284us,55us total 108.219ms
+D/DecorView[](12801): onWindowFocusChanged hasWindowFocus false
+W/MiuiMagicPointerUtilsStubHeadImpl(12801): MiuiMagicPointerUtilsStubHeadImpl has been initialized !!
+E/GoogleApiManager(12801): Failed to get service from broker. 
+E/GoogleApiManager(12801): java.lang.SecurityException: Unknown calling package name 'com.google.android.gms'.
+E/GoogleApiManager(12801):      at android.os.Parcel.createExceptionOrNull(Parcel.java:3011)
+E/GoogleApiManager(12801):      at android.os.Parcel.createException(Parcel.java:2995)
+E/GoogleApiManager(12801):      at android.os.Parcel.readException(Parcel.java:2978)
+E/GoogleApiManager(12801):      at android.os.Parcel.readException(Parcel.java:2920)
+E/GoogleApiManager(12801):      at bgoy.a(:com.google.android.gms@260931029@26.09.31 (190400-877989800):36)
+E/GoogleApiManager(12801):      at bgmz.z(:com.google.android.gms@260931029@26.09.31 (190400-877989800):143)
+E/GoogleApiManager(12801):      at bftc.run(:com.google.android.gms@260931029@26.09.31 (190400-877989800):42)
+E/GoogleApiManager(12801):      at android.os.Handler.handleCallback(Handler.java:942)
+E/GoogleApiManager(12801):      at android.os.Handler.dispatchMessage(Handler.java:99)
+E/GoogleApiManager(12801):      at cujd.mz(:com.google.android.gms@260931029@26.09.31 (190400-877989800):1)
+E/GoogleApiManager(12801):      at cujd.dispatchMessage(:com.google.android.gms@260931029@26.09.31 (190400-877989800):5)
+E/GoogleApiManager(12801):      at android.os.Looper.loopOnce(Looper.java:211)
+E/GoogleApiManager(12801):      at android.os.Looper.loop(Looper.java:300)
+E/GoogleApiManager(12801):      at android.os.HandlerThread.run(HandlerThread.java:67)
+W/GoogleApiManager(12801): Not showing notification since connectionResult is not user-facing: ConnectionResult{statusCode=DEVELOPER_ERROR, resolution=null, message=null, clientMethodKey=null}
+D/CallDetectionSvc(12801): Call answered/outgoing
+D/CallDetectionSvc(12801): Bubble shown for source: SIM
+I/AudioManager(12801): In isSpeakerphoneOn() calling application: com.zalocall.zalo_call_recorder
+I/AudioManager(12801): In setSpeakerphoneOn() true calling application: com.zalocall.zalo_call_recorder
+D/CallDetectionSvc(12801): Audio routing: speaker=ON, mode kept=2, vol=11/11
+D/AudioRecord(12801): set(): inputSource 4, sampleRate 44100, format 0x1, channelMask 0x10, frameCount 7168, notificationFrames 0, sessionId 0, transferType 0, flags 0, attributionSource AttributionSourceState{pid: -1, uid: 10352, packageName: com.zalocall.zalo_call_recorder, attributionTag: (null), token: , renouncedPermissions: [], next: []}uid -1, pid -1, isIsolated 0
+E/AudioRecord(12801): createRecord_l(-1275068297): AudioFlinger could not create record track, status: -1
+E/AudioRecord-JNI(12801): Error creating AudioRecord instance: initialization check failed with status -1.
+E/android.media.AudioRecord(12801): Error code -20 when initializing native AudioRecord object.
+D/AudioRecord(12801): set(): inputSource 1, sampleRate 44100, format 0x1, channelMask 0x10, frameCount 7168, notificationFrames 0, sessionId 0, transferType 0, flags 0, attributionSource AttributionSourceState{pid: -1, uid: 10352, packageName: com.zalocall.zalo_call_recorder, attributionTag: (null), token: , renouncedPermissions: [], next: []}uid -1, pid -1, isIsolated 0
+D/CallDetectionSvc(12801): AudioRecord initialized with source: 1
+D/CallDetectionSvc(12801): AEC DISABLED - speaker audio will now be captured
+D/CallDetectionSvc(12801): NoiseSuppressor DISABLED
+D/AudioRecord(12801): start(5675): sync event 0 trigger session 0, mSessionID=47593
+D/CallDetectionSvc(12801): Recording started: /storage/emulated/0/Documents/CallRecorder/2026-03/2026-03-10/SIM_205636.wav source=MIC (speaker=ON, AEC=OFF)
+D/CompatibilityChangeReporter(12801): Compat change id reported: 210923482; UID 10352; state: ENABLED
+D/VRI[]   (12801): vri.reportNextDraw android.view.ViewRootImpl.performTraversals:4013 android.view.ViewRootImpl.doTraversal:2725 android.view.ViewRootImpl$TraversalRunnable.run:9812 android.view.Choreographer$CallbackRecord.run:1505 android.view.Choreographer$CallbackRecord.run:1513
+
+D/VRI[]   (12801): vri.Setup new sync id=0 syncSeqId=0
+E/perf_hint(12801): Session creation failed, mPreferredRateNanos: -1
+D/VRI[]   (12801): vri.reportDrawFinished syncSeqId=0 android.view.ViewRootImpl.lambda$createSyncIfNeeded$4$android-view-ViewRootImpl:4081 android.view.ViewRootImpl$$ExternalSyntheticLambda2.run:6 android.os.Handler.handleCallback:942 android.os.Handler.dispatchMessage:99 android.os.Looper.loopOnce:211
+D/AudioRecord(12801): [audioRecordData][mute] 1s(f:0 m:1140 s:0) : pid 12801 uid 10352 sessionId 47593 sr 44100 ch 1 fmt 1
+D/AudioRecord(12801): [audioRecordData][mute] 2s(f:0 m:2115 s:0) : pid 12801 uid 10352 sessionId 47593 sr 44100 ch 1 fmt 1
+D/AudioRecord(12801): [audioRecordData][mute] 3s(f:0 m:3085 s:0) : pid 12801 uid 10352 sessionId 47593 sr 44100 ch 1 fmt 1
+D/AudioRecord(12801): [audioRecordData][mute] 4s(f:0 m:4064 s:0) : pid 12801 uid 10352 sessionId 47593 sr 44100 ch 1 fmt 1
+D/AudioRecord(12801): [audioRecordData][mute] 5s(f:0 m:5040 s:0) : pid 12801 uid 10352 sessionId 47593 sr 44100 ch 1 fmt 1
+D/AudioRecord(12801): [audioRecordData][mute] 6s(f:0 m:6020 s:0) : pid 12801 uid 10352 sessionId 47593 sr 44100 ch 1 fmt 1
+D/AudioRecord(12801): [audioRecordData][mute] 7s(f:0 m:7155 s:0) : pid 12801 uid 10352 sessionId 47593 sr 44100 ch 1 fmt 1
+D/AudioRecord(12801): [audioRecordData][mute] 8s(f:0 m:8125 s:0) : pid 12801 uid 10352 sessionId 47593 sr 44100 ch 1 fmt 1
+D/CallDetectionSvc(12801): Call ended
+D/CallDetectionSvc(12801): WAV file complete: 745472 bytes of audio data
+D/AudioRecord(12801): stop mSessionID=47593
+D/AudioRecord(12801): stop(5675): mActive:1
+D/AudioRecord(12801): stop mSessionID=47593
+D/AudioRecord(12801): stop(5675): mActive:0
+D/AudioRecord(12801): stop mSessionID=47593
+D/AudioRecord(12801): stop(5675): mActive:0
+D/CallDetectionSvc(12801): Recording stopped: /storage/emulated/0/Documents/CallRecorder/2026-03/2026-03-10/SIM_205636.wav (duration: 17s)
+I/AudioManager(12801): In setSpeakerphoneOn() false calling application: com.zalocall.zalo_call_recorder
+D/CallDetectionSvc(12801): Audio restored: speaker=false, vol=11
+D/CallDetectionSvc(12801): Recording file size: 745516 bytes at /storage/emulated/0/Documents/CallRecorder/2026-03/2026-03-10/SIM_205636.wav
+D/CallDetectionSvc(12801): Valid recording saved: /storage/emulated/0/Documents/CallRecorder/2026-03/2026-03-10/SIM_205636.wav (17s, 745516 bytes)
+I/flutter (12801): New recording saved, reloading list...
+I/flutter (12801): Skipping corrupt file (3232 bytes): /storage/emulated/0/Documents/CallRecorder/2026-03/2026-03-10/SIM_195612.m4a
+I/flutter (12801): Skipping corrupt file (3232 bytes): /storage/emulated/0/Documents/CallRecorder/2026-03/2026-03-10/SIM_195703.m4a
+W/Firestore(12801): (25.1.4) [Firestore]: Listen for Query(target=Query(recordings where userId==EImgMFcwtXaepxgPY5kYZdipP2y1 order by -createdAt, -__name__);limitType=LIMIT_TO_FIRST) failed: Status{code=FAILED_PRECONDITION, description=The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/zalo-call/firestore/indexes?create_composite=Ckxwcm9qZWN0cy96YWxvLWNhbGwvZGF0YWJhc2VzLyhkZWZhdWx0KS9jb2xsZWN0aW9uR3JvdXBzL3JlY29yZGluZ3MvaW5kZXhlcy9fEAEaCgoGdXNlcklkEAEaDQoJY3JlYXRlZEF0EAIaDAoIX19uYW1lX18QAg, cause=null}
+I/flutter (12801): Failed to load from Firestore: [cloud_firestore/failed-precondition] The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/zalo-call/firestore/indexes?create_composite=Ckxwcm9qZWN0cy96YWxvLWNhbGwvZGF0YWJhc2VzLyhkZWZhdWx0KS9jb2xsZWN0aW9uR3JvdXBzL3JlY29yZGluZ3MvaW5kZXhlcy9fEAEaCgoGdXNlcklkEAEaDQoJY3JlYXRlZEF0EAIaDAoIX19uYW1lX18QAg
+E/qdgralloc(12801): GetGpuPixelFormat: No map for format: 0x38
+E/AdrenoUtils(12801): <validate_memory_layout_input_parmas:1970>: Unknown Format 0
+E/AdrenoUtils(12801): <adreno_init_memory_layout:4720>: Memory Layout input parameter validation failed!
+E/qdgralloc(12801): GetGpuResourceSizeAndDimensions Graphics metadata init failed
+E/Gralloc4(12801): isSupported(1, 1, 56, 1, ...) failed with 1
+E/GraphicBufferAllocator(12801): Failed to allocate (4 x 4) layerCount 1 format 56 usage b00: 1
+E/AHardwareBuffer(12801): GraphicBuffer(w=4, h=4, lc=1) failed (Unknown error -1), handle=0x0
+E/qdgralloc(12801): GetGpuPixelFormat: No map for format: 0x38
+E/AdrenoUtils(12801): <validate_memory_layout_input_parmas:1970>: Unknown Format 0
+E/AdrenoUtils(12801): <adreno_init_memory_layout:4720>: Memory Layout input parameter validation failed!
+E/qdgralloc(12801): GetGpuResourceSizeAndDimensions Graphics metadata init failed
+E/Gralloc4(12801): isSupported(1, 1, 56, 1, ...) failed with 1
+E/GraphicBufferAllocator(12801): Failed to allocate (4 x 4) layerCount 1 format 56 usage b00: 1
+E/AHardwareBuffer(12801): GraphicBuffer(w=4, h=4, lc=1) failed (Unknown error -1), handle=0x0
+D/VRI[MainActivity](12801): vri.reportNextDraw android.view.ViewRootImpl.performTraversals:4013 android.view.ViewRootImpl.doTraversal:2725 android.view.ViewRootImpl$TraversalRunnable.run:9812 android.view.Choreographer$CallbackRecord.run:1505 android.view.Choreographer$CallbackRecord.run:1513
+D/SurfaceView(12801): UPDATE Surface(name=SurfaceView[com.zalocall.zalo_call_recorder/com.zalocall.zalo_call_recorder.MainActivity])/@0x5b8a78f, mIsProjectionMode = false
+D/VRI[MainActivity](12801): vri.Setup new sync id=1 syncSeqId=0
+D/VRI[MainActivity](12801): vri.reportDrawFinished syncSeqId=0 android.view.ViewRootImpl.lambda$createSyncIfNeeded$4$android-view-ViewRootImpl:4081 android.view.ViewRootImpl$$ExternalSyntheticLambda2.run:6 android.os.Handler.handleCallback:942 android.os.Handler.dispatchMessage:99 android.os.Looper.loopOnce:211
+I/flutter (12801): App resumed - reloading recordings from local storage
+D/DecorView[](12801): onWindowFocusChanged hasWindowFocus true
+I/HandWritingStubImpl(12801): refreshLastKeyboardType: 1
+I/HandWritingStubImpl(12801): getCurrentKeyboardType: 1
+I/flutter (12801): Skipping corrupt file (3232 bytes): /storage/emulated/0/Documents/CallRecorder/2026-03/2026-03-10/SIM_195612.m4a
+I/flutter (12801): Skipping corrupt file (3232 bytes): /storage/emulated/0/Documents/CallRecorder/2026-03/2026-03-10/SIM_195703.m4a
+W/Firestore(12801): (25.1.4) [Firestore]: Listen for Query(target=Query(recordings where userId==EImgMFcwtXaepxgPY5kYZdipP2y1 order by -createdAt, -__name__);limitType=LIMIT_TO_FIRST) failed: Status{code=FAILED_PRECONDITION, description=The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/zalo-call/firestore/indexes?create_composite=Ckxwcm9qZWN0cy96YWxvLWNhbGwvZGF0YWJhc2VzLyhkZWZhdWx0KS9jb2xsZWN0aW9uR3JvdXBzL3JlY29yZGluZ3MvaW5kZXhlcy9fEAEaCgoGdXNlcklkEAEaDQoJY3JlYXRlZEF0EAIaDAoIX19uYW1lX18QAg, cause=null}
+I/flutter (12801): Failed to load from Firestore: [cloud_firestore/failed-precondition] The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/zalo-call/firestore/indexes?create_composite=Ckxwcm9qZWN0cy96YWxvLWNhbGwvZGF0YWJhc2VzLyhkZWZhdWx0KS9jb2xsZWN0aW9uR3JvdXBzL3JlY29yZGluZ3MvaW5kZXhlcy9fEAEaCgoGdXNlcklkEAEaDQoJY3JlYXRlZEF0EAIaDAoIX19uYW1lX18QAg
+D/MIUIInput(12801): [KeyEvent] ViewRootImpl windowName 'com.zalocall.zalo_call_recorder/com.zalocall.zalo_call_recorder.MainActivity', KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_VOLUME_DOWN, scanCode=114, metaState=0, flags=0x8, repeatCount=0, eventTime=369894372472000, downTime=369894372472000, deviceId=4, source=0x101, displayId=-1 }, phoneEventTime=20:57:03.140
+D/MIUIInput(12801): [KeyEvent] ViewRootImpl windowName 'com.zalocall.zalo_call_recorder/com.zalocall.zalo_call_recorder.MainActivity', KeyEvent { action=ACTION_UP, keyCode=KEYCODE_VOLUME_DOWN, scanCode=114, metaState=0, flags=0x8, repeatCount=0, eventTime=369894653459000, downTime=369894372472000, deviceId=4, source=0x101, displayId=-1 }, phoneEventTime=20:57:03.421
+V/MediaPlayer(12801): resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
+V/MediaPlayer(12801): cleanDrmObj: mDrmObj=null mDrmSessionId=null
+D/MIUIInput(12801): [KeyEvent] ViewRootImpl windowName 'com.zalocall.zalo_call_recorder/com.zalocall.zalo_call_recorder.MainActivity', KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_VOLUME_DOWN, scanCode=114, metaState=0, flags=0x8, repeatCount=0, eventTime=369896362217000, downTime=369896362217000, deviceId=4, source=0x101, displayId=-1 }, phoneEventTime=20:57:05.130
+D/MIUIInput(12801): [KeyEvent] ViewRootImpl windowName 'com.zalocall.zalo_call_recorder/com.zalocall.zalo_call_recorder.MainActivity', KeyEvent { action=ACTION_UP, keyCode=KEYCODE_VOLUME_DOWN, scanCode=114, metaState=0, flags=0x8, repeatCount=0, eventTime=369896470436000, downTime=369896362217000, deviceId=4, source=0x101, displayId=-1 }, phoneEventTime=20:57:05.239
+D/MIUIInput(12801): [KeyEvent] ViewRootImpl windowName 'com.zalocall.zalo_call_recorder/com.zalocall.zalo_call_recorder.MainActivity', KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_VOLUME_UP, scanCode=115, metaState=0, flags=0x8, repeatCount=0, eventTime=369902548132000, downTime=369902548132000, deviceId=3, source=0x101, displayId=-1 }, phoneEventTime=20:57:11.316
+D/MIUIInput(12801): [KeyEvent] ViewRootImpl windowName 'com.zalocall.zalo_call_recorder/com.zalocall.zalo_call_recorder.MainActivity', KeyEvent { action=ACTION_UP, keyCode=KEYCODE_VOLUME_UP, scanCode=115, metaState=0, flags=0x8, repeatCount=0, eventTime=369902688117000, downTime=369902548132000, deviceId=3, source=0x101, displayId=-1 }, phoneEventTime=20:57:11.457
+D/MIUIInput(12801): [KeyEvent] ViewRootImpl windowName 'com.zalocall.zalo_call_recorder/com.zalocall.zalo_call_recorder.MainActivity', KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_VOLUME_UP, scanCode=115, metaState=0, flags=0x8, repeatCount=0, eventTime=369903028157000, downTime=369903028157000, deviceId=3, source=0x101, displayId=-1 }, phoneEventTime=20:57:11.796
+D/MIUIInput(12801): [KeyEvent] ViewRootImpl windowName 'com.zalocall.zalo_call_recorder/com.zalocall.zalo_call_recorder.MainActivity', KeyEvent { action=ACTION_UP, keyCode=KEYCODE_VOLUME_UP, scanCode=115, metaState=0, flags=0x8, repeatCount=0, eventTime=369903192132000, downTime=369903028157000, deviceId=3, source=0x101, displayId=-1 }, phoneEventTime=20:57:11.961
+D/MIUIInput(12801): [KeyEvent] ViewRootImpl windowName 'com.zalocall.zalo_call_recorder/com.zalocall.zalo_call_recorder.MainActivity', KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_VOLUME_UP, scanCode=115, metaState=0, flags=0x8, repeatCount=0, eventTime=369903612156000, downTime=369903612156000, deviceId=3, source=0x101, displayId=-1 }, phoneEventTime=20:57:12.380
+D/MIUIInput(12801): [KeyEvent] ViewRootImpl windowName 'com.zalocall.zalo_call_recorder/com.zalocall.zalo_call_recorder.MainActivity', KeyEvent { action=ACTION_UP, keyCode=KEYCODE_VOLUME_UP, scanCode=115, metaState=0, flags=0x8, repeatCount=0, eventTime=369903760201000, downTime=369903612156000, deviceId=3, source=0x101, displayId=-1 }, phoneEventTime=20:57:12.528
+D/MIUIInput(12801): [KeyEvent] ViewRootImpl windowName 'com.zalocall.zalo_call_recorder/com.zalocall.zalo_call_recorder.MainActivity', KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_VOLUME_UP, scanCode=115, metaState=0, flags=0x8, repeatCount=0, eventTime=369903900225000, downTime=369903900225000, deviceId=3, source=0x101, displayId=-1 }, phoneEventTime=20:57:12.669
+D/MIUIInput(12801): [KeyEvent] ViewRootImpl windowName 'com.zalocall.zalo_call_recorder/com.zalocall.zalo_call_recorder.MainActivity', KeyEvent { action=ACTION_UP, keyCode=KEYCODE_VOLUME_UP, scanCode=115, metaState=0, flags=0x8, repeatCount=0, eventTime=369904044125000, downTime=369903900225000, deviceId=3, source=0x101, displayId=-1 }, phoneEventTime=20:57:12.813
+V/MediaPlayer(12801): resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
+V/MediaPlayer(12801): cleanDrmObj: mDrmObj=null mDrmSessionId=null
+V/MediaPlayer(12801): resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
+V/MediaPlayer(12801): cleanDrmObj: mDrmObj=null mDrmSessionId=null
+D/MIUIInput(12801): [KeyEvent] ViewRootImpl windowName 'com.zalocall.zalo_call_recorder/com.zalocall.zalo_call_recorder.MainActivity', KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_VOLUME_DOWN, scanCode=114, metaState=0, flags=0x8, repeatCount=0, eventTime=369906259122000, downTime=369906259122000, deviceId=4, source=0x101, displayId=-1 }, phoneEventTime=20:57:15.028
+D/MIUIInput(12801): [KeyEvent] ViewRootImpl windowName 'com.zalocall.zalo_call_recorder/com.zalocall.zalo_call_recorder.MainActivity', KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_VOLUME_DOWN, scanCode=114, metaState=0, flags=0x88, repeatCount=1, eventTime=369906660351754, downTime=369906259122000, deviceId=4, source=0x101, displayId=-1 }, phoneEventTime=20:57:15.429
+D/MIUIInput(12801): [KeyEvent] ViewRootImpl windowName 'com.zalocall.zalo_call_recorder/com.zalocall.zalo_call_recorder.MainActivity', KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_VOLUME_DOWN, scanCode=114, metaState=0, flags=0x8, repeatCount=2, eventTime=369906710680139, downTime=369906259122000, deviceId=4, source=0x101, displayId=-1 }, phoneEventTime=20:57:15.478
+D/MIUIInput(12801): [KeyEvent] ViewRootImpl windowName 'com.zalocall.zalo_call_recorder/com.zalocall.zalo_call_recorder.MainActivity', KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_VOLUME_DOWN, scanCode=114, metaState=0, flags=0x8, repeatCount=3, eventTime=369906760985868, downTime=369906259122000, deviceId=4, source=0x101, displayId=-1 }, phoneEventTime=20:57:15.529
+D/MIUIInput(12801): [KeyEvent] ViewRootImpl windowName 'com.zalocall.zalo_call_recorder/com.zalocall.zalo_call_recorder.MainActivity', KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_VOLUME_DOWN, scanCode=114, metaState=0, flags=0x8, repeatCount=4, eventTime=369906811688941, downTime=369906259122000, deviceId=4, source=0x101, displayId=-1 }, phoneEventTime=20:57:15.579
+D/MIUIInput(12801): [KeyEvent] ViewRootImpl windowName 'com.zalocall.zalo_call_recorder/com.zalocall.zalo_call_recorder.MainActivity', KeyEvent { action=ACTION_DOWN, keyCode=KEYCODE_VOLUME_DOWN, scanCode=114, metaState=0, flags=0x8, repeatCount=5, eventTime=369906862379253, downTime=369906259122000, deviceId=4, source=0x101, displayId=-1 }, phoneEventTime=20:57:15.631
+D/MIUIInput(12801): [KeyEvent] ViewRootImpl windowName 'com.zalocall.zalo_call_recorder/com.zalocall.zalo_call_recorder.MainActivity', KeyEvent { action=ACTION_UP, keyCode=KEYCODE_VOLUME_DOWN, scanCode=114, metaState=0, flags=0x8, repeatCount=0, eventTime=369906923858000, downTime=369906259122000, deviceId=4, source=0x101, displayId=-1 }, phoneEventTime=20:57:15.692
+V/MediaPlayer(12801): resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
+V/MediaPlayer(12801): cleanDrmObj: mDrmObj=null mDrmSessionId=null
+V/MediaPlayer(12801): resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
+V/MediaPlayer(12801): cleanDrmObj: mDrmObj=null mDrmSessionId=null
+V/MediaPlayer(12801): resetDrmState:  mDrmInfo=null mDrmProvisioningThread=null mPrepareDrmInProgress=false mActiveDrmScheme=false
+V/MediaPlayer(12801): cleanDrmObj: mDrmObj=null mDrmSessionId=null
+D/DecorView[](12801): onWindowFocusChanged hasWindowFocus false

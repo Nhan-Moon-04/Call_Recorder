@@ -1,3 +1,5 @@
+import 'dart:async';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:audioplayers/audioplayers.dart';
@@ -19,8 +21,50 @@ class _RecordingsScreenState extends State<RecordingsScreen> {
   String _searchQuery = '';
   final _searchController = TextEditingController();
 
+  // Playback state
+  Duration _currentPosition = Duration.zero;
+  Duration _totalDuration = Duration.zero;
+  bool _isPlaying = false;
+  StreamSubscription? _positionSub;
+  StreamSubscription? _durationSub;
+  StreamSubscription? _completeSub;
+  StreamSubscription? _stateSub;
+
+  @override
+  void initState() {
+    super.initState();
+    _setupAudioListeners();
+  }
+
+  void _setupAudioListeners() {
+    _positionSub = _audioPlayer.onPositionChanged.listen((pos) {
+      if (mounted) setState(() => _currentPosition = pos);
+    });
+    _durationSub = _audioPlayer.onDurationChanged.listen((dur) {
+      if (mounted) setState(() => _totalDuration = dur);
+    });
+    _completeSub = _audioPlayer.onPlayerComplete.listen((_) {
+      if (mounted) {
+        setState(() {
+          _playingId = null;
+          _isPlaying = false;
+          _currentPosition = Duration.zero;
+        });
+      }
+    });
+    _stateSub = _audioPlayer.onPlayerStateChanged.listen((state) {
+      if (mounted) {
+        setState(() => _isPlaying = state == PlayerState.playing);
+      }
+    });
+  }
+
   @override
   void dispose() {
+    _positionSub?.cancel();
+    _durationSub?.cancel();
+    _completeSub?.cancel();
+    _stateSub?.cancel();
     _audioPlayer.dispose();
     _searchController.dispose();
     super.dispose();
@@ -153,142 +197,228 @@ class _RecordingsScreenState extends State<RecordingsScreen> {
     RecordingProvider provider,
   ) {
     final isPlaying = _playingId == recording.id;
+    final isThisActive = _playingId == recording.id;
 
     return Card(
       margin: const EdgeInsets.only(bottom: 8),
-      child: Padding(
-        padding: const EdgeInsets.all(12),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                // Type Icon
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: recording.type == RecordingType.audio
-                        ? Colors.blue.withValues(alpha: 0.1)
-                        : Colors.purple.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(12),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(12),
+        onTap: recording.type == RecordingType.audio
+            ? () => _togglePlayback(recording)
+            : null,
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  // Type Icon
+                  Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: isPlaying
+                          ? theme.colorScheme.primary.withValues(alpha: 0.15)
+                          : recording.type == RecordingType.audio
+                          ? Colors.blue.withValues(alpha: 0.1)
+                          : Colors.purple.withValues(alpha: 0.1),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Icon(
+                      isPlaying
+                          ? Icons.graphic_eq_rounded
+                          : recording.type == RecordingType.audio
+                          ? Icons.mic
+                          : Icons.videocam,
+                      color: isPlaying
+                          ? theme.colorScheme.primary
+                          : recording.type == RecordingType.audio
+                          ? Colors.blue
+                          : Colors.purple,
+                    ),
                   ),
-                  child: Icon(
-                    recording.type == RecordingType.audio
-                        ? Icons.mic
-                        : Icons.videocam,
-                    color: recording.type == RecordingType.audio
-                        ? Colors.blue
-                        : Colors.purple,
-                  ),
-                ),
-                const SizedBox(width: 12),
+                  const SizedBox(width: 12),
 
-                // Info
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 8,
-                              vertical: 2,
-                            ),
-                            decoration: BoxDecoration(
-                              color: theme.colorScheme.primaryContainer,
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Text(
-                              recording.source,
-                              style: theme.textTheme.labelSmall?.copyWith(
-                                color: theme.colorScheme.primary,
-                                fontWeight: FontWeight.bold,
+                  // Info
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 8,
+                                vertical: 2,
+                              ),
+                              decoration: BoxDecoration(
+                                color: theme.colorScheme.primaryContainer,
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Text(
+                                _getDisplaySource(recording.source),
+                                style: theme.textTheme.labelSmall?.copyWith(
+                                  color: theme.colorScheme.primary,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
+                            const SizedBox(width: 8),
+                            if (recording.isUploaded)
+                              Icon(
+                                Icons.cloud_done,
+                                size: 16,
+                                color: Colors.green[600],
+                              ),
+                          ],
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          '${recording.formattedDuration} • ${recording.formattedSize}',
+                          style: theme.textTheme.bodyMedium,
+                        ),
+                        Text(
+                          _formatDateTime(recording.createdAt),
+                          style: theme.textTheme.bodySmall?.copyWith(
+                            color: theme.colorScheme.onSurfaceVariant,
                           ),
-                          const SizedBox(width: 8),
-                          if (recording.isUploaded)
-                            Icon(
-                              Icons.cloud_done,
-                              size: 16,
-                              color: Colors.green[600],
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  // Actions
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      // Play/Pause
+                      if (recording.type == RecordingType.audio)
+                        IconButton(
+                          icon: Icon(
+                            isPlaying && _isPlaying
+                                ? Icons.pause_circle_filled
+                                : Icons.play_circle_filled,
+                            color: theme.colorScheme.primary,
+                            size: 36,
+                          ),
+                          onPressed: () => _togglePlayback(recording),
+                        ),
+                      // More actions
+                      PopupMenuButton<String>(
+                        itemBuilder: (context) => [
+                          if (!recording.isUploaded)
+                            PopupMenuItem(
+                              value: 'upload',
+                              child: ListTile(
+                                leading: const Icon(Icons.cloud_upload),
+                                title: Text(context.tr('upload_to_cloud')),
+                                contentPadding: EdgeInsets.zero,
+                              ),
                             ),
+                          PopupMenuItem(
+                            value: 'delete',
+                            child: ListTile(
+                              leading: const Icon(
+                                Icons.delete,
+                                color: Colors.red,
+                              ),
+                              title: Text(
+                                context.tr('delete'),
+                                style: const TextStyle(color: Colors.red),
+                              ),
+                              contentPadding: EdgeInsets.zero,
+                            ),
+                          ),
                         ],
+                        onSelected: (value) {
+                          if (value == 'upload') {
+                            provider.uploadRecording(recording);
+                          } else if (value == 'delete') {
+                            _showDeleteDialog(recording, provider);
+                          }
+                        },
                       ),
-                      const SizedBox(height: 4),
+                    ],
+                  ),
+                ],
+              ),
+
+              // Seekbar - shown when this recording is active
+              if (isThisActive) ...[
+                const SizedBox(height: 8),
+                SliderTheme(
+                  data: SliderThemeData(
+                    trackHeight: 4,
+                    thumbShape: const RoundSliderThumbShape(
+                      enabledThumbRadius: 6,
+                    ),
+                    overlayShape: const RoundSliderOverlayShape(
+                      overlayRadius: 14,
+                    ),
+                    activeTrackColor: theme.colorScheme.primary,
+                    inactiveTrackColor: theme.colorScheme.primary.withValues(
+                      alpha: 0.2,
+                    ),
+                    thumbColor: theme.colorScheme.primary,
+                  ),
+                  child: Slider(
+                    value: _totalDuration.inMilliseconds > 0
+                        ? _currentPosition.inMilliseconds.toDouble().clamp(
+                            0,
+                            _totalDuration.inMilliseconds.toDouble(),
+                          )
+                        : 0,
+                    max: _totalDuration.inMilliseconds > 0
+                        ? _totalDuration.inMilliseconds.toDouble()
+                        : 1,
+                    onChanged: (value) {
+                      _audioPlayer.seek(Duration(milliseconds: value.toInt()));
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
                       Text(
-                        '${recording.formattedDuration} • ${recording.formattedSize}',
-                        style: theme.textTheme.bodyMedium,
-                      ),
-                      Text(
-                        _formatDateTime(recording.createdAt),
+                        _formatDuration(_currentPosition),
                         style: theme.textTheme.bodySmall?.copyWith(
                           color: theme.colorScheme.onSurfaceVariant,
+                          fontFeatures: [const FontFeature.tabularFigures()],
+                        ),
+                      ),
+                      Text(
+                        _formatDuration(_totalDuration),
+                        style: theme.textTheme.bodySmall?.copyWith(
+                          color: theme.colorScheme.onSurfaceVariant,
+                          fontFeatures: [const FontFeature.tabularFigures()],
                         ),
                       ),
                     ],
                   ),
                 ),
-
-                // Actions
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    // Play/Pause
-                    if (recording.type == RecordingType.audio)
-                      IconButton(
-                        icon: Icon(
-                          isPlaying
-                              ? Icons.pause_circle_filled
-                              : Icons.play_circle_filled,
-                          color: theme.colorScheme.primary,
-                          size: 36,
-                        ),
-                        onPressed: () => _togglePlayback(recording),
-                      ),
-                    // More actions
-                    PopupMenuButton<String>(
-                      itemBuilder: (context) => [
-                        if (!recording.isUploaded)
-                          PopupMenuItem(
-                            value: 'upload',
-                            child: ListTile(
-                              leading: const Icon(Icons.cloud_upload),
-                              title: Text(context.tr('upload_to_cloud')),
-                              contentPadding: EdgeInsets.zero,
-                            ),
-                          ),
-                        PopupMenuItem(
-                          value: 'delete',
-                          child: ListTile(
-                            leading: const Icon(
-                              Icons.delete,
-                              color: Colors.red,
-                            ),
-                            title: Text(
-                              context.tr('delete'),
-                              style: const TextStyle(color: Colors.red),
-                            ),
-                            contentPadding: EdgeInsets.zero,
-                          ),
-                        ),
-                      ],
-                      onSelected: (value) {
-                        if (value == 'upload') {
-                          provider.uploadRecording(recording);
-                        } else if (value == 'delete') {
-                          _showDeleteDialog(recording, provider);
-                        }
-                      },
-                    ),
-                  ],
-                ),
               ],
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
+  }
+
+  /// Fix display for old files named "{source}_..." (broken $ interpolation)
+  String _getDisplaySource(String source) {
+    if (source == '{source}' || source.isEmpty) return 'SIM';
+    return source;
+  }
+
+  String _formatDuration(Duration d) {
+    final minutes = d.inMinutes.remainder(60).toString().padLeft(2, '0');
+    final seconds = d.inSeconds.remainder(60).toString().padLeft(2, '0');
+    if (d.inHours > 0) {
+      final hours = d.inHours.toString().padLeft(2, '0');
+      return '$hours:$minutes:$seconds';
+    }
+    return '$minutes:$seconds';
   }
 
   List<RecordingModel> _getFilteredRecordings(List<RecordingModel> recordings) {
@@ -336,18 +466,63 @@ class _RecordingsScreenState extends State<RecordingsScreen> {
 
   Future<void> _togglePlayback(RecordingModel recording) async {
     if (_playingId == recording.id) {
-      await _audioPlayer.stop();
-      setState(() => _playingId = null);
+      // Same recording: toggle pause/resume
+      if (_isPlaying) {
+        await _audioPlayer.pause();
+      } else {
+        await _audioPlayer.resume();
+      }
     } else {
+      // Different recording: stop current, play new
       await _audioPlayer.stop();
-      await _audioPlayer.play(DeviceFileSource(recording.filePath));
-      setState(() => _playingId = recording.id);
-
-      _audioPlayer.onPlayerComplete.listen((_) {
-        if (mounted) {
-          setState(() => _playingId = null);
-        }
+      setState(() {
+        _playingId = recording.id;
+        _currentPosition = Duration.zero;
+        _totalDuration = Duration.zero;
       });
+
+      try {
+        // Check if file exists and is valid before playing
+        final file = File(recording.filePath);
+        if (!await file.exists()) {
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('File not found'),
+                backgroundColor: Colors.red,
+              ),
+            );
+          }
+          setState(() => _playingId = null);
+          return;
+        }
+        final fileSize = await file.length();
+        if (fileSize < 4096) {
+          if (mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('File is corrupt or empty'),
+                backgroundColor: Colors.orange,
+              ),
+            );
+          }
+          setState(() => _playingId = null);
+          return;
+        }
+
+        await _audioPlayer.play(DeviceFileSource(recording.filePath));
+      } catch (e) {
+        debugPrint('Playback error: $e');
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Cannot play: ${e.toString().split('\n').first}'),
+              backgroundColor: Colors.red,
+            ),
+          );
+        }
+        setState(() => _playingId = null);
+      }
     }
   }
 

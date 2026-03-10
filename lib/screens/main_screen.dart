@@ -1,8 +1,10 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/auth_provider.dart' as app;
 import '../providers/recording_provider.dart';
 import '../l10n/app_localizations.dart';
+import '../services/native_call_service.dart';
 import 'home_screen.dart';
 import 'recordings_screen.dart';
 import 'settings_screen.dart';
@@ -14,8 +16,9 @@ class MainScreen extends StatefulWidget {
   State<MainScreen> createState() => _MainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
   int _currentIndex = 0;
+  StreamSubscription? _callEventSubscription;
 
   final List<Widget> _screens = const [
     HomeScreen(),
@@ -26,7 +29,47 @@ class _MainScreenState extends State<MainScreen> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     _loadData();
+    _listenForNewRecordings();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    _callEventSubscription?.cancel();
+    super.dispose();
+  }
+
+  /// Reload recordings when app comes back to foreground
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      debugPrint('App resumed - reloading recordings from local storage');
+      _loadData();
+    }
+  }
+
+  void _listenForNewRecordings() {
+    _callEventSubscription = NativeCallService.callEvents.listen((event) {
+      final eventType = event['eventType'] as String?;
+      if (eventType == 'recordingSaved') {
+        debugPrint('New recording saved, reloading list...');
+        _loadData();
+      } else if (eventType == 'recordingFailed') {
+        debugPrint('Recording failed: ${event['reason']}');
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text(
+                'Recording failed: ${event['reason'] ?? 'Unknown error'}',
+              ),
+              backgroundColor: Colors.orange,
+            ),
+          );
+        }
+      }
+    });
   }
 
   void _loadData() {
